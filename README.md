@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Hiking in National Parks
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TrailAdvisor is a Vite + React + Typescript application. It provides opportunity to learn about National Parks in selected state and save the most interesting parks to favorites.
 
-Currently, two official plugins are available:
+# Technical documentation of the project
+## Code specification
+### Project structure:
+- **public** - directory for static files
+- **src** - directory with main code files
+    - *vite-env.d.ts* - file with custom types that used in projects    
+- *.env.example* - file with templates for environmental variables
+- *package.json* - main properties of project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Main types
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Installation
 
-- Configure the top-level `parserOptions` property like this:
+Clone repository. run `npm install` to get all dependencies.
+To run dev scripts use command `npm run dev`.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## User guide
+### UI user guide
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+# Author
+Project prepared as a part of education in **Software Engineering Bootcamp** at *Per Scholas* by [Kseniia Irinarkhova](https://www.linkedin.com/in/kseniia-irinarkhova/).
+
+# Additional Resources
+- (React Router Typesafe)[https://github.com/fredericoo/react-router-typesafe]
+- (National Park Service API Documentation)[https://www.nps.gov/subjects/developer/api-documentation.htm#/amenities/getAmenities]
+
