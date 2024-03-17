@@ -18,12 +18,12 @@ const { router, href } = typesafeBrowserRouter([
         children :[
             { index: true, element: <Index /> },
             {
-                path: "/parks/:stateCode",
+                path: "/:stateCode/parks",
                 Component: Parks,
                 children:[
                     { index: true, element: <ParksIndex /> },
                     {
-                        path: "/parks/:stateCode/:parkId",
+                        path: "/:stateCode/parks/:parkId",
                         Component: ParkInfo,
                     }
                 ]

@@ -1,7 +1,9 @@
-
+import './Footer.css'
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <div className='footer'>
+      <p>Copyright: Seny Irinarkhova 2024</p>      
+    </div>
   )
 }
 

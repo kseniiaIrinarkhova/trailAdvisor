@@ -1,7 +1,7 @@
 
 const Index= () => {
   return (
-    <div>Index Main Page!!!</div>
+    <div className="main">Index Main Page!!!</div>
   )
 }
 
