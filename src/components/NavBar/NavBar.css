@@ -1,0 +1,18 @@
+.nav-bar {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    font-size: 2em;
+}
+
+.nav-bar a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-bar a:hover {
+    color: aquamarine;
+}
