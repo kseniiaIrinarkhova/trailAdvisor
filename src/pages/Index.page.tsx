@@ -15,8 +15,7 @@ const Index= () => {
       </div>
       <div className="state-form">
         <h1>Find the most beautiful parks in choosen state!</h1>
-        <Form method="get" action="/parks">
-          <p>
+        <Form id="state" method="get" action="/parks">
             <select name='stateCode' value={currentState}
               onChange={(e) => {
                 setCurrentState(e.target.value as keyof typeof USStates);
@@ -27,10 +26,7 @@ const Index= () => {
                 </option>
               ))}
               </select>
-          </p>
-          <p>
             <button type="submit">Go to explore!</button>
-          </p>
         </Form>
       </div>
     </div>

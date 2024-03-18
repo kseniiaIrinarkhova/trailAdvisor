@@ -10,9 +10,34 @@
     height: auto;
     max-height: 80vh;
 }
-
 .hero-img img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    -webkit-mask-image: -webkit-gradient(linear, top left, top right, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.state-form{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 10px;
+}
+.state-form h1{
+    text-align: center;
+    color: #172c3a;
+}
+
+#state{
+    width: 100%;
+    min-width: 200px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 10px;
+    
+}
+
+#state select{
+    width: 70%;
+    font-size: 1.5em;
 }
