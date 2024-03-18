@@ -20,7 +20,6 @@
 
     white-space: pre;
     padding: 0.5rem;
-    border-radius: 5px;
     color: inherit;
     text-decoration: none;
     gap: 1rem;
@@ -31,7 +30,8 @@
 }
 
 #side-nav nav a.active {
-    background: #7fba9c;
+    border-left:#44766f 3px solid;
+    background: white;
     color: #824A53;
 }
 
