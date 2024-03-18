@@ -31,23 +31,25 @@ async function getParks(stateCode: string) : Promise<Park[]> {
     else throw new Error("There is some issue to get parks for this state")
 }
 
-// async function getStarships() {
-//     //create simple url
-//     const url = `${API_URL}/starships/`;
-//     //get first 10 starships
-//     const response = await axios.get(url);
-//     //return response data
-//     return response.data
-// }
+async function getParksbyCode(parkCode: string): Promise<Park> {
+    const url = `${API_URL}/parks?parkCode=${parkCode}`
+    const response = await axios.get(url);
+    console.log(response)
+    const park: Park = {
+        id: response.data.data[0].id,
+        activities: response.data.data[0].activities,
+        description: response.data.data[0].description,
+        entranceFees: response.data.data[0].entranceFees,
+        fullName: response.data.data[0].fullName,
+        images: response.data.data[0].images,
+        name: response.data.data[0].name,
+        parkCode: response.data.data[0].parkCode,
 
-// async function getShip(shipId) {
-//     //create simple url
-//     const url = `${API_URL}/starships/${shipId}`;
-//     //get star ship data
-//     const response = await axios.get(url);
-//     console.log(response)
-//     //return response data
-//     return response.data
-// }
+        } as Park
+   
+    console.log(park)
+    if (park) return park
+    else throw new Error("There is some issue to get parks for this state")
+}
 
-export { getParks };
+export { getParks, getParksbyCode };

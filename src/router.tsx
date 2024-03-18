@@ -36,7 +36,7 @@ const { router, href } = typesafeBrowserRouter([
                 children: [
                     { index: true, element: <ParksIndex /> },
                     {
-                        path: "/:stateCode/parks/:parkId",
+                        path: "/:stateCode/parks/:parkCode",
                         Component: ParkInfo,
                     }
                 ]
