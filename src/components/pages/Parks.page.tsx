@@ -1,4 +1,4 @@
-import { Link, Outlet, redirect } from "react-router-dom"
+import { Outlet, redirect } from "react-router-dom"
 import { makeLoader, useLoaderData } from "react-router-typesafe"
 import { getParks } from "../../services/pn_api";
 import { useParams } from "react-router-dom";

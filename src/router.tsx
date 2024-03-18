@@ -9,6 +9,7 @@ import ErrorPage from "./error-page";
 import Index from "./components/pages/Index.page";
 import ParksIndex from "./components/pages/ParksIndex.page";
 import ParkInfo from "./components/pages/ParkInfo.page";
+import { ParkProvider } from "./services/context";
 
 const { router, href } = typesafeBrowserRouter([
     {
@@ -30,7 +31,7 @@ const { router, href } = typesafeBrowserRouter([
             },
             {
                 path: "/:stateCode/parks",
-                Component: Parks,
+                element: <ParkProvider><Parks/></ParkProvider>,
                 loader: Parks.loader,
                 children: [
                     { index: true, element: <ParksIndex /> },

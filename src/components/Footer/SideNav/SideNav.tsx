@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom"
 import { Park } from "../../../vite-env.d"
 import './SideNav.css'
+import { useContext } from "react"
+import { ParkContext} from "../../../services/context"
 
 interface IProps {
     stateCode: string,
@@ -8,7 +10,7 @@ interface IProps {
 }
 
 const SideNav = ({ stateCode, parks }: IProps) => {
-
+const {setPark} = useContext(ParkContext);
     return (
         <div id="side-nav">
             <nav>
@@ -23,7 +25,7 @@ const SideNav = ({ stateCode, parks }: IProps) => {
                                             : isPending
                                                 ? "pending"
                                                 : ""
-                                    }>
+                                    } onClick={()=>{setPark({...park})}}>
                                     {park.name}
                                 </NavLink>
                             </li>
