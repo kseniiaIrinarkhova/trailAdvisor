@@ -53,4 +53,34 @@ enum USStates {
     WY = 'Wyoming'
 }
 
-export {USStates}
+
+type Park = {
+    //activities available on the park
+    activities?: Array<{ id: string, name: string }>,
+    //Introductory paragraph from the park homepage
+    description: string,
+    //information about entrance fees
+    entranceFees?: Array<{
+        cost: string;
+        description: string,
+        title: string
+    }>
+    //Full park name (with designation)
+    fullName: string,
+    //Park identification string
+    id: string,
+    //images of the park
+    images?: Array<{
+        credit: string,
+        altText: string,
+        title: string,
+        caption: string,
+        url: string
+    }>,
+    //Short park name (no designation)
+    name: string,
+    //A variable width character code used to identify a specific park
+    parkCode: string,
+}
+
+export { USStates, Park }
