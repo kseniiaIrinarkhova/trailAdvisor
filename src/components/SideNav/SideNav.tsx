@@ -6,10 +6,11 @@ import { ParkContext} from "../../services/context"
 
 interface IProps {
     stateCode: string,
-    parks: Array<Park>| null
+    parks: Array<Park>| null,
+    root?: string
 }
 
-const SideNav = ({ stateCode, parks }: IProps) => {
+const SideNav = ({ stateCode, parks, root = '' }: IProps) => {
 const {setPark} = useContext(ParkContext);
     return (
         <div id="side-nav">
@@ -18,7 +19,7 @@ const {setPark} = useContext(ParkContext);
                     <ul>
                         {parks.map((park: Park) => (
                             <li key={park.id}>
-                                <NavLink to={`/${(park.stateCode)? park.stateCode : stateCode}/parks/${park.parkCode}`}
+                                <NavLink to={`${root}/${(park.stateCode)? park.stateCode : stateCode}/parks/${park.parkCode}`}
                                     className={({ isActive, isPending }) =>
                                         isActive
                                             ? "active"

@@ -36,8 +36,6 @@ async function getAllFavorites(): Promise<Park[]> {
         const parkCodes = favorites.map((fav) => fav.parkCode);
         const parkCodesStr = parkCodes.join(',');
         const parks = await getParksbyCode(parkCodesStr);
-
-
      return parks;
 }
 

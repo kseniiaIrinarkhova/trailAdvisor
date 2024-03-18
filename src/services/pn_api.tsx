@@ -44,7 +44,7 @@ async function getParksbyCode(parkCode: string): Promise<Park[]> {
             name: park.name,
             parkCode: park.parkCode,
             states: park.states,
-            stateCode : park.states.toString().split[','][0]
+            stateCode : park.states.toString().split(',')[0]
 
         } as Park
     })

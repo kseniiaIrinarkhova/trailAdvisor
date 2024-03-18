@@ -4,7 +4,7 @@ import { makeLoader, redirect, typesafeBrowserRouter } from "react-router-typesa
 //Components
 import Parks from "./pages/Parks.page";
 import App from "./App";
-import Favorite from "./pages/Favorite.page";
+import MyList from "./pages/MyList.page";
 import ErrorPage from "./error-page";
 import Index from "./pages/Index.page";
 import ParksIndex from "./pages/ParksIndex.page";
@@ -44,9 +44,16 @@ const { router, href } = typesafeBrowserRouter([
                 ]
             },
             {
-                path: "/favorite",
-                Component: Favorite,
-                loader: Favorite.loader
+                path: "/favorites",
+                element: <ParkProvider><MyList /></ParkProvider>,
+                loader: MyList.loader,
+                children: [
+                    {
+                        path: "/favorites/:stateCode/parks/:parkCode",
+                        action: FavoriteForm.action,
+                        Component: ParkInfo,
+                    }
+                ]
             },
         ]
     },
