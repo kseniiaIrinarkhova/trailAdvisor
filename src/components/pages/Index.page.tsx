@@ -19,7 +19,6 @@ const Index= () => {
           <p>
             <select name='stateCode' value={currentState}
               onChange={(e) => {
-                console.log("try to change State");
                 setCurrentState(e.target.value as keyof typeof USStates);
               }}>
               {getEnumKeys(USStates).map((key) => (

@@ -20,15 +20,18 @@ const { router, href } = typesafeBrowserRouter([
             {
                 path: '/parks',
                 loader: makeLoader(async ({ request }) => {
-                    console.log(request)
+                    //get url from get method of form
                     let url = new URL(request.url);
-                    let searchTerm = url.searchParams.get("stateCode");
-                    return redirect(`/${searchTerm}/parks`);
+                    //form sends stateCode parameters
+                    let stateCode = url.searchParams.get("stateCode");
+                    //redirect to state parks
+                    return redirect(`/${stateCode}/parks`);
                 })
             },
             {
                 path: "/:stateCode/parks",
                 Component: Parks,
+                loader: Parks.loader,
                 children: [
                     { index: true, element: <ParksIndex /> },
                     {
