@@ -13,7 +13,7 @@ async function getParks(stateCode: string) : Promise<Park[]> {
     const url = `${API_URL}/parks?stateCode=${stateCode.toString()}`
     const response = await axios.get(url);
     console.log(response)
-    const parks: Park[] = response.data.data.map((park)=>{
+    const parks: Park[] = response.data.data.map((park:any)=>{
         return {
             id: park.id,
             activities: park.activities,
