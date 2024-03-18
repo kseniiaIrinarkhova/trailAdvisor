@@ -1,22 +1,8 @@
-import { getParkContext } from "../../services/context";
+import { getParkContext } from "../services/context";
 import Carousel, { Image } from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 import './ParkInfo.page.css'
-import FavoriteForm from "../FavoriteForm/FavoriteForm";
-import { makeAction } from "react-router-typesafe";
-import { setFavoriteStatus } from "../../services/utilities";
-import { Favorite } from "../../vite-env.d";
-
-// const action = makeAction(async ({ request, params }) => {
-//   let formData = await request.formData();
-//   console.log("makeAction!")
-//   console.log(formData)
-//   const result = await setFavoriteStatus({
-//     parkCode: params.parkCode,
-//     isFavorite: formData.get("favorite") === "true"
-//   } as Favorite);
-//   return result;
-// });
+import FavoriteForm from "../components/FavoriteForm/FavoriteForm";
 
 const ParkInfo = () => {
   let park = getParkContext();
@@ -41,5 +27,4 @@ return {
   )
 }
 
-// ParkInfo.action = action;
 export default ParkInfo

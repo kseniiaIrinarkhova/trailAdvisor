@@ -1,9 +1,9 @@
 import { Outlet, redirect } from "react-router-dom"
 import { makeLoader, useLoaderData } from "react-router-typesafe"
-import { getParks } from "../../services/pn_api";
+import { getParks } from "../services/pn_api";
 import { useParams } from "react-router-dom";
-import SideNav from "../Footer/SideNav/SideNav";
-import { Park } from "../../vite-env.d";
+import SideNav from "../components/SideNav/SideNav";
+import { Park } from "../vite-env";
 
 
 

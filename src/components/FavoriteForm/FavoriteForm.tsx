@@ -9,8 +9,6 @@ interface IProps{
 }
 const action = makeAction(async ({ request, params }) => {
     let formData = await request.formData();
-    console.log(formData)
-    console.log(formData.get("favorite"))
     return setFavoriteStatus({
         parkCode: params.parkCode,
         isFavorite: formData.get("favorite") === "true"
@@ -21,7 +19,6 @@ const FavoriteForm = ({parkCode, stateCode}:IProps) => {
     const fetcher = useFetcher();
     let isFavorite = getFavoriteStatus(parkCode);
     if (fetcher.formData) {
-        console.log("FavoriteForm")
         isFavorite = fetcher.formData.get("isFavorite") === "true";
     }
 

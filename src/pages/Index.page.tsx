@@ -1,5 +1,5 @@
 import { Form } from "react-router-dom";
-import { USStates } from "../../vite-env.d";
+import { USStates } from "../vite-env.d";
 import './Index.page.css'
 import { useState } from "react";
 

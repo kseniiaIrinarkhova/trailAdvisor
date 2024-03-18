@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom"
-import { Park } from "../../../vite-env.d"
+import { Park } from "../../vite-env"
 import './SideNav.css'
 import { useContext } from "react"
-import { ParkContext} from "../../../services/context"
+import { ParkContext} from "../../services/context"
 
 interface IProps {
     stateCode: string,

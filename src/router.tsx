@@ -2,13 +2,13 @@ import { makeLoader, redirect, typesafeBrowserRouter } from "react-router-typesa
 
 
 //Components
-import Parks from "./components/pages/Parks.page";
+import Parks from "./pages/Parks.page";
 import App from "./App";
-import Favorite from "./components/pages/Favorite.page";
+import Favorite from "./pages/Favorite.page";
 import ErrorPage from "./error-page";
-import Index from "./components/pages/Index.page";
-import ParksIndex from "./components/pages/ParksIndex.page";
-import ParkInfo from "./components/pages/ParkInfo.page";
+import Index from "./pages/Index.page";
+import ParksIndex from "./pages/ParksIndex.page";
+import ParkInfo from "./pages/ParkInfo.page";
 import { ParkProvider } from "./services/context";
 import FavoriteForm from "./components/FavoriteForm/FavoriteForm";
 
