@@ -2,9 +2,10 @@ import { getParkContext } from "../../services/context";
 import Carousel, { Image } from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 import './ParkInfo.page.css'
-import { makeLoader, redirect, useLoaderData } from "react-router-typesafe";
-import { Park } from "../../vite-env.d";
-import { getParksbyCode } from "../../services/pn_api";
+import Favorite from "../Favorite/Favorite";
+// import { makeLoader, redirect, useLoaderData } from "react-router-typesafe";
+// import { Park } from "../../vite-env.d";
+// import { getParksbyCode } from "../../services/pn_api";
 
 
 // const loader = makeLoader(async ({ params }): Promise<Park | Response> =>{
@@ -34,11 +35,11 @@ console.log(images)
 
   return (
       <div className="parks-container">
-      <div className="park-title"><h1>{park.name}</h1></div>      
+      <div className="park-title"><h1>{park.name} <Favorite parkCode={park.parkCode} /></h1></div>      
       <Carousel className="park-gallery" images={images} />
       <div className="park-description">{park.description}</div>
       </div>
   )
 }
-ParkInfo.loader=loader;
+// ParkInfo.loader=loader;
 export default ParkInfo
