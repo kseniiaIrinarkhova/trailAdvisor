@@ -1,5 +1,6 @@
-.footer{
-    height: 200px;
+.footer {
+    flex-shrink: 0;
+    height: 100px;
     background-color: #172c3a;
     color: #f7d6b8;
     display: flex;
@@ -7,8 +8,4 @@
     text-align: center;
     font-size: 0.5em;
     justify-content: center;
-    position: fixed;
-        left: 0;
-        bottom: 0;
-        width: 100%;
 }

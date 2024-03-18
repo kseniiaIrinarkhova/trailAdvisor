@@ -1,7 +1,7 @@
 .nav-bar {
+    flex-shrink: 0;
     display: flex;
-    width: auto;
-    justify-content: space-between;
+    justify-content: space-around;
     background-color: #172c3a;
     padding: 0 10px 0 10px;
     color: #7fba9c;
@@ -11,6 +11,7 @@
 .nav-bar a {
     color: #7fba9c;
     text-decoration: none;
+    padding: 10px;
 }
 
 .nav-bar a:hover {

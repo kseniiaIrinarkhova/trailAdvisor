@@ -1,4 +1,4 @@
-import { typesafeBrowserRouter } from "react-router-typesafe";
+import { makeLoader, redirect, typesafeBrowserRouter } from "react-router-typesafe";
 
 
 //Components
@@ -15,12 +15,21 @@ const { router, href } = typesafeBrowserRouter([
         path: "/",
         Component: App,
         errorElement: <ErrorPage />,
-        children :[
+        children: [
             { index: true, element: <Index /> },
+            {
+                path: '/parks',
+                loader: makeLoader(async ({ request }) => {
+                    console.log(request)
+                    let url = new URL(request.url);
+                    let searchTerm = url.searchParams.get("stateCode");
+                    return redirect(`/${searchTerm}/parks`);
+                })
+            },
             {
                 path: "/:stateCode/parks",
                 Component: Parks,
-                children:[
+                children: [
                     { index: true, element: <ParksIndex /> },
                     {
                         path: "/:stateCode/parks/:parkId",
@@ -28,13 +37,13 @@ const { router, href } = typesafeBrowserRouter([
                     }
                 ]
             },
-            { 
+            {
                 path: "/favorite",
                 Component: Favorite
             },
         ]
     },
-    
+
 ]);
 
 
