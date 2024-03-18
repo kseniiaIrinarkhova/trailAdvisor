@@ -3,20 +3,25 @@ import { makeLoader, useLoaderData } from "react-router-typesafe"
 import { getParks } from "../../services/pn_api";
 import { useParams } from "react-router-dom";
 import SideNav from "../Footer/SideNav/SideNav";
+import { Park } from "../../vite-env.d";
 
-const loader = makeLoader(async({ params })=>{
+
+
+const loader = makeLoader(async({ params }): Promise<Park[] | Response>=>{
     
     if(params.stateCode === undefined) return redirect('/')
     const parks = await getParks(params.stateCode.toString());
     return parks
 });
 const Parks = () => {
-    const parks = useLoaderData() ;
+    const parks = useLoaderData() as Park[];
     const {stateCode} = useParams();
-    console.log(stateCode)
+   
+    console.log(parks)
     return (
         <div className="main">
-            <SideNav stateCode={stateCode} parks={parks}/>
+            <SideNav stateCode={(stateCode) ? stateCode : ""} 
+            parks={(parks!== null) ? parks : [] }/>
             <div className="parks-container">
                 <h1>Parks Page</h1>
                 <Outlet />

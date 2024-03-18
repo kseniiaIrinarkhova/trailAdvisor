@@ -1,29 +1,31 @@
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { Park } from "../../../vite-env.d"
+import './SideNav.css'
 
 interface IProps {
     stateCode: string,
-    parks: Array<Park>
+    parks: Array<Park>| null
 }
 
 const SideNav = ({ stateCode, parks }: IProps) => {
 
     return (
-        <div className="side-nav">
+        <div id="side-nav">
             <nav>
-                {parks.length ? (
+                {(parks !== null && parks.length) ? (
                     <ul>
                         {parks.map((park: Park) => (
                             <li key={park.id}>
-                                <Link to={`/${stateCode}/parks/${park.parkCode}`}>
-                                    {park.name ? (
-                                        <>
-                                            {park.name}
-                                        </>
-                                    ) : (
-                                        <i>No Name</i>
-                                    )}{" "}
-                                </Link>
+                                <NavLink to={`/${stateCode}/parks/${park.parkCode}`}
+                                    className={({ isActive, isPending }) =>
+                                        isActive
+                                            ? "active"
+                                            : isPending
+                                                ? "pending"
+                                                : ""
+                                    }>
+                                    {park.name}
+                                </NavLink>
                             </li>
                         ))}
                     </ul>

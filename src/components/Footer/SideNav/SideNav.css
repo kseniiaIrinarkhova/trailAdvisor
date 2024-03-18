@@ -1,0 +1,40 @@
+#side-nav{
+    background-color: #44766f;
+}
+
+#side-nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+#side-nav li {
+    margin: 0.25rem 0;
+}
+
+#side-nav nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+
+    white-space: pre;
+    padding: 0.5rem;
+    border-radius: 5px;
+    color: inherit;
+    text-decoration: none;
+    gap: 1rem;
+}
+
+#side-nav nav a:hover {
+    background: #f7d6b8;
+}
+
+#side-nav nav a.active {
+    background: #7fba9c;
+    color: #824A53;
+}
+
+#side-nav nav a.pending {
+    color: #7fba9b67;
+}
