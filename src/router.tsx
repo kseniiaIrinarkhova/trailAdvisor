@@ -5,7 +5,7 @@ import { makeLoader, redirect, typesafeBrowserRouter } from "react-router-typesa
 import Parks from "./pages/Parks.page";
 import App from "./App";
 import MyList from "./pages/MyList.page";
-import ErrorPage from "./error-page";
+import ErrorPage from "./pages/ErrorPage";
 import Index from "./pages/Index.page";
 import ParksIndex from "./pages/ParksIndex.page";
 import ParkInfo from "./pages/ParkInfo.page";
