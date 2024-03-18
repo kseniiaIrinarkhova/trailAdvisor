@@ -3,7 +3,7 @@ import { makeLoader, useLoaderData } from "react-router-typesafe"
 import { getParks } from "../services/pn_api";
 import { useParams } from "react-router-dom";
 import SideNav from "../components/SideNav/SideNav";
-import { Park } from "../vite-env";
+import { Park } from "../vite-env.d";
 
 
 

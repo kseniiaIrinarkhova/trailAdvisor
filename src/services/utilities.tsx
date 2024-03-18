@@ -1,4 +1,5 @@
-import { Favorite } from "../vite-env.d";
+import { Favorite, Park } from "../vite-env.d";
+import { getParksbyCode } from "./pn_api";
 
 function getFavoriteStatus(parkCode: string): Boolean {
     const favLocalStorage = localStorage.getItem("favorites")
@@ -25,4 +26,19 @@ async function setFavoriteStatus(favorite: Favorite): Promise<Boolean> {
     return true;
 }
 
-export { getFavoriteStatus, setFavoriteStatus }
+async function getAllFavorites(): Promise<Park[]> {
+    const favLocalStorage = localStorage.getItem("favorites")
+    let result: Park[] = [];
+    if (favLocalStorage === null)  return result;
+
+        const favorites = JSON.parse(favLocalStorage) as Array<Favorite>;
+
+        const parkCodes = favorites.map((fav) => fav.parkCode);
+        const parkCodesStr = parkCodes.join(',');
+        const parks = await getParksbyCode(parkCodesStr);
+
+
+     return parks;
+}
+
+export { getFavoriteStatus, setFavoriteStatus , getAllFavorites }

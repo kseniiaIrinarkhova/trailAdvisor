@@ -53,4 +53,5 @@ Project prepared as a part of education in **Software Engineering Bootcamp** at 
 - (React Router Typesafe)[https://github.com/fredericoo/react-router-typesafe]
 - (National Park Service API Documentation)[https://www.nps.gov/subjects/developer/api-documentation.htm#/amenities/getAmenities]
 - (Use enum in React select)[https://stackoverflow.com/questions/55601342/using-enumerations-in-react-select]
-
+- (Canva)[https://www.canva.com/] - was used for images
+ 

@@ -45,7 +45,8 @@ const { router, href } = typesafeBrowserRouter([
             },
             {
                 path: "/favorite",
-                Component: Favorite
+                Component: Favorite,
+                loader: Favorite.loader
             },
         ]
     },
