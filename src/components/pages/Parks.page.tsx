@@ -22,10 +22,7 @@ const Parks = () => {
         <div className="main">
             <SideNav stateCode={(stateCode) ? stateCode : ""} 
             parks={(parks!== null) ? parks : [] }/>
-            <div className="parks-container">
-                <h1>Parks Page</h1>
                 <Outlet />
-            </div>
         </div>
     )
 }
