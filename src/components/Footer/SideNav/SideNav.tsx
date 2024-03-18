@@ -25,7 +25,7 @@ const {setPark} = useContext(ParkContext);
                                             : isPending
                                                 ? "pending"
                                                 : ""
-                                    } onClick={()=>{setPark({...park})}}>
+                                    } onClick={()=>{setPark({...park, stateCode: stateCode})}}>
                                     {park.name}
                                 </NavLink>
                             </li>

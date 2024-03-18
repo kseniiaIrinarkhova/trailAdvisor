@@ -81,6 +81,12 @@ type Park = {
     name: string,
     //A variable width character code used to identify a specific park
     parkCode: string,
+    states: string,
+    stateCode? : string
 }
 
-export { USStates, Park }
+type Favorite ={
+parkCode : string;
+isFavorite : Boolean
+}
+export { USStates, Park, Favorite }

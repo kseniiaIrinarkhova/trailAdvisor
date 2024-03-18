@@ -10,6 +10,7 @@ import Index from "./components/pages/Index.page";
 import ParksIndex from "./components/pages/ParksIndex.page";
 import ParkInfo from "./components/pages/ParkInfo.page";
 import { ParkProvider } from "./services/context";
+import FavoriteForm from "./components/FavoriteForm/FavoriteForm";
 
 const { router, href } = typesafeBrowserRouter([
     {
@@ -37,6 +38,7 @@ const { router, href } = typesafeBrowserRouter([
                     { index: true, element: <ParksIndex /> },
                     {
                         path: "/:stateCode/parks/:parkCode",
+                        action: FavoriteForm.action,
                         Component: ParkInfo,
                     }
                 ]

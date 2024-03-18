@@ -2,20 +2,20 @@ import { getParkContext } from "../../services/context";
 import Carousel, { Image } from 'react-gallery-carousel';
 import 'react-gallery-carousel/dist/index.css';
 import './ParkInfo.page.css'
-import Favorite from "../Favorite/Favorite";
-// import { makeLoader, redirect, useLoaderData } from "react-router-typesafe";
-// import { Park } from "../../vite-env.d";
-// import { getParksbyCode } from "../../services/pn_api";
+import FavoriteForm from "../FavoriteForm/FavoriteForm";
+import { makeAction } from "react-router-typesafe";
+import { setFavoriteStatus } from "../../services/utilities";
+import { Favorite } from "../../vite-env.d";
 
-
-// const loader = makeLoader(async ({ params }): Promise<Park | Response> =>{
-//   // let park = getParkContext() as Park;
-
-//   // if(park) return park;
-//   console.log(params)
-//   if (params.parkCode === undefined ) return redirect('/')
-//    let park = await getParksbyCode(params.parkCode.toString());
-//   return park;
+// const action = makeAction(async ({ request, params }) => {
+//   let formData = await request.formData();
+//   console.log("makeAction!")
+//   console.log(formData)
+//   const result = await setFavoriteStatus({
+//     parkCode: params.parkCode,
+//     isFavorite: formData.get("favorite") === "true"
+//   } as Favorite);
+//   return result;
 // });
 
 const ParkInfo = () => {
@@ -31,15 +31,15 @@ return {
 } as Image
 
   })
-console.log(images)
 
   return (
       <div className="parks-container">
-      <div className="park-title"><h1>{park.name} <Favorite parkCode={park.parkCode} /></h1></div>      
+      <div className="park-title"><h1>{park.name} <FavoriteForm parkCode={park.parkCode} stateCode={(park.stateCode) ? park.stateCode : ""} /></h1></div>      
       <Carousel className="park-gallery" images={images} />
       <div className="park-description">{park.description}</div>
       </div>
   )
 }
-// ParkInfo.loader=loader;
+
+// ParkInfo.action = action;
 export default ParkInfo

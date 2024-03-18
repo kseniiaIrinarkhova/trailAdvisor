@@ -12,7 +12,6 @@ const API_URL = import.meta.env.VITE_API_URL
 async function getParks(stateCode: string) : Promise<Park[]> {
     const url = `${API_URL}/parks?stateCode=${stateCode.toString()}`
     const response = await axios.get(url);
-    console.log(response)
     const parks: Park[] = response.data.data.map((park:any)=>{
         return {
             id: park.id,
@@ -26,7 +25,6 @@ async function getParks(stateCode: string) : Promise<Park[]> {
 
         } as Park
     })
-    console.log(parks)
     if (parks) return parks
     else throw new Error("There is some issue to get parks for this state")
 }
@@ -34,7 +32,6 @@ async function getParks(stateCode: string) : Promise<Park[]> {
 async function getParksbyCode(parkCode: string): Promise<Park> {
     const url = `${API_URL}/parks?parkCode=${parkCode}`
     const response = await axios.get(url);
-    console.log(response)
     const park: Park = {
         id: response.data.data[0].id,
         activities: response.data.data[0].activities,
@@ -44,10 +41,9 @@ async function getParksbyCode(parkCode: string): Promise<Park> {
         images: response.data.data[0].images,
         name: response.data.data[0].name,
         parkCode: response.data.data[0].parkCode,
-
+        states: response.data.data[0].states,
         } as Park
    
-    console.log(park)
     if (park) return park
     else throw new Error("There is some issue to get parks for this state")
 }
