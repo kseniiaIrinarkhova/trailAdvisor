@@ -1,7 +1,7 @@
 
 const ParksIndex = () => {
   return (
-    <div>ParksIndex page</div>
+    <div><h1>Choose park that you want to explore!</h1></div>
   )
 }
 
